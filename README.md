@@ -34,3 +34,9 @@ Se você gostar do meu trabalho, não esqueça de dar uma ⭐ no repositório. �
 
 Com carinho,
 Lina
+
+
+
+### Progresso do Projeto
+#### 10% Concluído
+🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜
