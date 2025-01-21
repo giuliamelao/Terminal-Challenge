@@ -1,6 +1,23 @@
 import tkinter as tk
+import json
 from janela_secundaria import criar_segunda_janela
 from utils import BlinkingText
+
+def salvar_nome(janela, entrada_nome):
+    nome = entrada_nome.get()  # Pega o texto digitado
+    dados = {"nome": nome}  # Cria o dicionário com o nome
+    
+    # Salva no arquivo JSON
+    with open("usuario.json", "w") as arquivo:
+        json.dump(dados, arquivo)
+    
+    print(f"Nome salvo: {nome}")  # Apenas para feedback no console
+
+    # Exibe a mensagem com o nome do usuário
+    mensagem_label = tk.Label(janela, text=f"Muito bem, {nome}! Aperte Espaço e nós iremos na próxima página onde começaremos!", 
+                              font=("Courier", 12), fg="green", bg="black")
+    mensagem_label.pack(pady=10)
+
 
 def criar_janela_inicial():
     janela = tk.Tk()
@@ -30,15 +47,17 @@ def criar_janela_inicial():
     label_iniciar = tk.Label(janela, text=texto_iniciar, font=("Courier", 12), fg="green", bg="black")
     label_iniciar.pack(pady=10)
 
-    # Adicionar o texto que pisca
-    blinking_text = BlinkingText(
-        janela,
-        "Pressione qualquer tecla para iniciar...\n",
-        500,
-        font=("Courier", 12),
-        fg="green",
-        bg="black"
-    )
+    # Adicionar entrada para o nome
+    label_nome = tk.Label(janela, text="Digite seu nome:", font=("Courier", 12), fg="green", bg="black")
+    label_nome.pack(pady=10)
+
+    entrada_nome = tk.Entry(janela, font=("Courier", 12), fg="white", bg="black", insertbackground="white", highlightthickness=0, bd=0)
+    entrada_nome.pack(pady=10)
+    entrada_nome.focus_set()
+
+    # Ativar a função ao pressionar Enter
+    janela.bind("<Return>", lambda event: salvar_nome(janela, entrada_nome))
+
 
     # Função para abrir a próxima janela
     def iniciar_proxima_janela(event):
@@ -46,7 +65,7 @@ def criar_janela_inicial():
         criar_segunda_janela()
 
     # Ativar evento de teclado
-    janela.bind("<Key>", iniciar_proxima_janela)
+    janela.bind("<KeyPress-space>", iniciar_proxima_janela)
 
     # Iniciar janela
-    janela.mainloop()
+    janela.mainloop()    
