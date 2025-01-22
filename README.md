@@ -38,5 +38,5 @@ Lina
 
 
 ### Progresso do Projeto
-#### 10% Concluído
-🟩⬜⬜⬜⬜⬜⬜⬜⬜⬜
+#### 30% Concluído
+🟩🟩🟩⬜⬜⬜⬜⬜⬜⬜
