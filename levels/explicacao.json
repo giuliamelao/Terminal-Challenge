@@ -1,0 +1,18 @@
+{
+    "fase": 1,
+    "explicacao": [
+      {
+        "comando": "pwd",
+        "texto": "Muito bem, <usuario>! Se você está aqui, imagino que já sabe o básico da programação, então não vou enrolar muito, né? Vamos logo ver o nosso primeiro comando:\npwd\nEsse comando serve para mostrar o diretório atual em que você está no terminal.\nPodemos continuar? (y/n)"
+      },
+      {
+        "comando": "cd",
+        "texto": "O comando 'cd' (change directory) é usado para navegar entre diretórios. Você pode usar esse comando seguido do nome do diretório para mudar de lugar. Por exemplo, 'cd Documents' irá levá-lo para a pasta Documents.\nPodemos continuar? (y/n)"
+      },
+      {
+        "comando": "ls",
+        "texto": "O comando 'ls' (list) lista os arquivos e pastas do diretório atual. Este comando vai retornar o nome das pastas e dos seus arquivos dentro do diretório que você abriu seu terminal\nPodemos continuar? (y/n)"
+      }
+    ]
+}
+  
